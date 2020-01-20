@@ -1,0 +1,1 @@
+web: gunicorn erial.wsgi --log-file -
