@@ -1,0 +1,48 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Erial</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/page_news.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        <a href="/"><img src="{% static 'img/Erial_logo.png' %}" alt=""></a>
+    </div>
+    <div class="content container">
+        <div class="d-flex flex-row justify-content-between">
+            <div class="block">
+                <a href='https://news.rambler.ru/'><img src="{% static 'img/logo_ru.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in news %}
+                    {% if new.site == 'Rambler' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+            <div class="block">
+                <a href='https://ria.ru/'><img src="{% static 'img/logo.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in news %}
+                    {% if new.site == 'Ria' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+
+        </div>
+    </div>
+    <script src="{% static 'js/logoanim.js' %}"></script>
+</body>
+
+</html>
