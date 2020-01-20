@@ -1,7 +1,7 @@
 from django.db import models, connection
 
 # Create your models here.
-class New(models.Model):
+class News(models.Model):
     '''
     Модель новостей.
     Переменные:
@@ -16,7 +16,7 @@ class New(models.Model):
     @classmethod
     def truncate(cls):
         with connection.cursor() as cursor:
-            cursor.execute('TRUNCATE TABLE `{0}`'.format(cls._meta.db_table))
+            cursor.execute('TRUNCATE TABLE {0} RESTART IDENTITY'.format(cls._meta.db_table))
 
     def __str__(self):
         return self.title;

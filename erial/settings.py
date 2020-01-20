@@ -80,12 +80,12 @@ WSGI_APPLICATION = 'erial.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'erial',
-        'USER':'django',
-        'PASSWORD':'26022002i',
-        'PORT':'3306',
-        'HOST': 'localhost',
+        'USER' : 'django',
+        'PASSWORD' : '360026102001el',
+        'HOST' : '127.0.0.1',
+        'PORT' : '5432',
     }
 }
 
@@ -128,9 +128,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-# Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import New
+from .models import News
 from .parsers.parsers import Rambler, Ria
 from .parsers.controllers import RamblerController, RiaController
 
@@ -19,6 +19,6 @@ def parse():
     control.save_parsed_data()
 
 def news_list(request):
-    news = New.objects.all()
+    news = News.objects.all()
     parse()
     return render(request, 'page/news_list.html', {'news': news})

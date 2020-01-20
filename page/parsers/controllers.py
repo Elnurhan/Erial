@@ -1,4 +1,4 @@
-from ..models import New
+from ..models import News
 from django.db import connection
 
 
@@ -13,13 +13,13 @@ class RamblerController(object):
         self.data = data
 
     def save_parsed_data(self):
-        New.truncate()
+        News.truncate()
         print(self.data)
         # Завёл счётчик итераций k, чтобы сохранить первые 10 эл-ов
         # в БД (ничего умнее не нашёл).
         k = 0
         for i, v in self.data.items():
-            New.objects.create(
+            News.objects.create(
                 title=i,
                 link=v,
                 site='Rambler'
@@ -48,7 +48,7 @@ class RiaController(object):
         # в БД (ничего умнее не нашёл).
         k = 0
         for i, v in self.data.items():
-            New.objects.create(
+            News.objects.create(
                 title=i,
                 link=v,
                 site='Ria'
