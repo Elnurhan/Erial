@@ -25,11 +25,8 @@ class RamblerController(object):
                 site='Rambler'
             )
             k += 1
-            print(k)
             if k > 9:
-                print("Break")
                 break
-        print('Succ!')
 
 
 class RiaController(object):
@@ -54,8 +51,5 @@ class RiaController(object):
                 site='Ria'
             )
             k += 1
-            print(k)
             if k > 9:
-                print("Break")
                 break
-        print('Succ!')
