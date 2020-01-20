@@ -14,11 +14,8 @@ Jinja2==2.10.3
 lxml==4.4.2
 MarkupSafe==1.1.1
 mysql-connector==2.2.9
-mysqlclient==1.4.6
-peewee==3.13.1
 psycopg2==2.8.4
 py-mysql2pgsql==0.1.5
-PyMySQL==0.9.3
 pytz==2019.3
 PyYAML==5.3
 requests==2.22.0
