@@ -1,12 +1,22 @@
-h1, h2, h3, h4 {
-    font-family: 'Bariol';
+@font-face {
+    font-family: 'font705300e6d1053351171e258adc55c2ac';
+        
+    src: url('https://nomail.com.ua/files/eot/705300e6d1053351171e258adc55c2ac.eot?#iefix') format('embedded-opentype'),
+         url('https://nomail.com.ua/files/woff/705300e6d1053351171e258adc55c2ac.woff') format('woff'),
+         url('https://nomail.com.ua/files/woff2/705300e6d1053351171e258adc55c2ac.woff2') format('woff2');
 }
+    
+@font-face { font-family: 'Arciform';  src: local('Arciform'), url('https://nomail.com.ua/files/woff/705300e6d1053351171e258adc55c2ac.woff') format('woff'); }
 
 .page-header {
-    background-color: black;
+    background-color: rgb(2, 174, 241);
     margin-top: 0;
     padding: 10px 10px 10px 40px;
     text-align: center;
+}
+
+.page-header h1 {
+    font-family: Arciform;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active{
@@ -57,14 +67,14 @@ h1, h2, h3, h4 {
     margin: 0;
     counter-reset: li;
     list-style: none;
-    background:#D5DADC;
+    background:rgb(255, 255, 255);
     padding: 10px;
 }
 .square li {
     position: relative;
     margin: 0 0 10px 2em;
     padding: 4px 8px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(2, 174, 241);
     transition: .3s linear;
 }
 .square li:last-child {margin-bottom: 0;}
@@ -78,11 +88,11 @@ h1, h2, h3, h4 {
     box-sizing: border-box;
     margin-right: 8px;
     padding: 4px;
-    border-top: 2px solid black;
+    border-top: 2px solid rgb(2, 174, 241);
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
     border-bottom: 2px solid transparent;
-    background: black;
+    background: rgb(2, 174, 241);
     color: white;
     font-weight: bold;
     text-align: center;
@@ -92,7 +102,7 @@ h1, h2, h3, h4 {
 .square li:hover:before {
     border: 2px solid white;
     background: white;
-    color: black;
+    color: rgb(2, 174, 241);
 }
 
 .page h2 {
