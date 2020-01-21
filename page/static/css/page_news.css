@@ -17,13 +17,13 @@ h1, h2, h3, h4 {
 
 .content {
     margin-left: 40px;
-    display: inline-block;
+    align-items: center;
 }
 
 
 
 .block img {
-    height: 50px;
+    height: 45px;
     width: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -35,7 +35,7 @@ h1, h2, h3, h4 {
 }
 
 .news {
-    width: 500px;
+    width: 330px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

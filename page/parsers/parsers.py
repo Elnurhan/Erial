@@ -58,7 +58,7 @@ class Rambler:
         return self.find_news(self.get_html(self.url))
 
 
-class Ria(object):
+class Ria:
     '''
     Данный класс предназначен для парсинга сайта Ria.
     При инициализации данного класса, устанавливается ссылка на сайт Ria.
@@ -98,6 +98,55 @@ class Ria(object):
         links = soup.findAll("a", class_="cell-list__item-link color-font-hover-only")
         for text in links:
             self.news_and_links[text.text] = text.get("href")
+
+        return self.news_and_links
+
+    def main(self):
+        return self.find_news(self.get_html(self.url))
+
+
+class Lenta:
+    '''
+    Данный класс предназначен для парсинга сайта Lenta.
+    При инициализации данного класса, устанавливается ссылка на сайт Lenta.
+    '''
+    def __init__(self):
+        '''
+        Переменные:
+            url = ссылка на страницу, с которой парсим данные.
+        '''
+        self.url = "https://lenta.ru/"
+        self.news_and_links = {}
+
+    def get_html(self, site):
+        '''
+        Данная функция принимает на вход ссылку на сайт и возвращает
+        html-код данного сайта.
+        Параметры:
+            site = сайт, html-код которого мы хотим получить.
+        Возвращает:
+            r = html-код данного сайта
+        '''
+        r = requests.get(site)
+        return r.text
+
+    def find_news(self, html):
+        '''
+        Данная функция принимает на вход html-код и ищет необходимые данные
+        с сайта.
+        Параметры:
+            html = html-код сайта, с которого мы собираемся парсить данные
+        Возвращает:
+            news_and_links = словарь, в котором ключи - это новости,
+            а значения - это ссылки на новость, к которой данный клю привязан
+        '''
+        soup = BeautifulSoup(html, 'lxml')
+
+        daily_news = soup.find("div", class_="b-yellow-box__wrap")
+        links = daily_news.findAll("a")
+
+        for text in links:
+            self.news_and_links[text.text] = "https://lenta.ru/" + text.get("href")
 
         return self.news_and_links
 
