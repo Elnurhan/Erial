@@ -61,6 +61,20 @@
                     </ol>
                 </div>
             </div>
+            <div class='col-sm'>
+                <div class="block">
+                    <a href='https://regnum.ru/main.html'><img src="{% static 'img/logo-regnum.png' %}"></a>
+                    <ol class='square'>
+                        {% for new in news %}
+                        {% if new.site == 'Regnum' %}
+                        <div class='news'>
+                            <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </ol>
+                </div>
+            </div>
         </div>
     </div>
 </body>

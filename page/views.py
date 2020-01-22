@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import News
-from .parsers.parsers import Rambler, Ria, Lenta
-from .parsers.controllers import RamblerController, RiaController, LentaController
+from .parsers.parsers import Rambler, Ria, Lenta, Regnum
+from .parsers.controllers import RamblerController, RiaController, LentaController, RegnumController
 
 # Create your views here.
 def parse():
@@ -21,6 +21,11 @@ def parse():
     x = Lenta().main()
 
     control = LentaController(x)
+    control.save_parsed_data()
+
+    x = Regnum().main()
+
+    control = RegnumController(x)
     control.save_parsed_data()
 
 def news_list(request):
