@@ -1,16 +1,12 @@
-@font-face {
-    font-family: 'font705300e6d1053351171e258adc55c2ac';
-        
-    src: url('https://nomail.com.ua/files/eot/705300e6d1053351171e258adc55c2ac.eot?#iefix') format('embedded-opentype'),
-         url('https://nomail.com.ua/files/woff/705300e6d1053351171e258adc55c2ac.woff') format('woff'),
-         url('https://nomail.com.ua/files/woff2/705300e6d1053351171e258adc55c2ac.woff2') format('woff2');
-}
-    
-@font-face { font-family: 'Arciform';  src: local('Arciform'), url('https://nomail.com.ua/files/woff/705300e6d1053351171e258adc55c2ac.woff') format('woff'); }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #E8E8E8;
+}
+
+.main__news {
+    text-align: center;
+    color: #990100;
+    padding-top: 2px;
 }
 
 .container {

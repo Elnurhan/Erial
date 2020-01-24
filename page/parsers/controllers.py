@@ -68,7 +68,6 @@ class RegnumController(object):
     def __init__(self, data):
         super(RegnumController, self).__init__()
         self.data = data
-        print(self.data)
 
     def save_parsed_data(self):
         for i, v in self.data.items():
@@ -76,4 +75,43 @@ class RegnumController(object):
                 title=i,
                 link=v,
                 site='Regnum'
+            )
+
+
+class GazetaController(object):
+    '''
+    Данный класс предназначен для сохранения данных в БД.
+    Функция save_parsed_data сначала чистит БД, а затем добавляет
+    в неё новые данные.
+    '''
+    def __init__(self, data):
+        super(GazetaController, self).__init__()
+        self.data = data
+
+    def save_parsed_data(self):
+        for i, v in self.data.items():
+            News.objects.create(
+                title=i,
+                link=v,
+                site='Gazeta'
+            )
+
+
+class RgController(object):
+    '''
+    Данный класс предназначен для сохранения данных в БД.
+    Функция save_parsed_data сначала чистит БД, а затем добавляет
+    в неё новые данные.
+    '''
+    def __init__(self, data):
+        super(RgController, self).__init__()
+        self.data = data
+        print(self.data)
+
+    def save_parsed_data(self):
+        for i, v in self.data.items():
+            News.objects.create(
+                title=i,
+                link=v,
+                site='Rg'
             )

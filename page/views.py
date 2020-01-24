@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import News
-from .parsers.parsers import Rambler, Ria, Lenta, Regnum
-from .parsers.controllers import RamblerController, RiaController, LentaController, RegnumController
+from .parsers.parsers import *
+from .parsers.controllers import *
 
 # Create your views here.
 def parse():
@@ -26,6 +26,16 @@ def parse():
     x = Regnum().main()
 
     control = RegnumController(x)
+    control.save_parsed_data()
+
+    x = Gazeta().main()
+
+    control = GazetaController(x)
+    control.save_parsed_data()
+
+    x = Rg().main()
+
+    control = RgController(x)
     control.save_parsed_data()
 
 def news_list(request):
