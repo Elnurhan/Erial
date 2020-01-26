@@ -1,0 +1,96 @@
+{% extends 'page/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="title">
+    <h1>Политика</h1>
+</div>
+<div class="content container">
+    <div class="row my-auto">
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://news.rambler.ru/politics/'><img src="{% static 'img/logo_ru.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Rambler' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://ria.ru/politics/'><img src="{% static 'img/logo.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Ria' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://regnum.ru/news/polit.html'><img src="{% static 'img/logo-regnum.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Regnum' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://rg.ru/tema/gos/'><img src="{% static 'img/logo_rg_yn.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Rg' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://lenta.ru/rubrics/russia/politic/'><img src="{% static 'img/logo_lenta.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Lenta' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+        <div class='col-sm'>
+            <div class="block">
+                <a href='https://www.gazeta.ru/politics/'><img src="{% static 'img/logo-gazeta-ru.png' %}" alt=""></a>
+                <ol class='square'>
+                    {% for new in politic_news %}
+                    {% if new.site == 'Gazeta' %}
+                    <div class='news'>
+                        <li><a href='{{ new.link }}' class='news-item__title'>{{ new.title }}</a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -106,7 +106,6 @@ class RgController(object):
     def __init__(self, data):
         super(RgController, self).__init__()
         self.data = data
-        print(self.data)
 
     def save_parsed_data(self):
         for i, v in self.data.items():
